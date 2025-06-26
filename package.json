@@ -4,7 +4,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "fmt": "biome check --write --unsafe .",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.5",
