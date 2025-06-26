@@ -8,7 +8,8 @@
     "fmt": "biome check --write --unsafe .",
     "lint": "biome check .",
     "typecheck": "tsc --noEmit",
-    "build": "bun run ./scripts/build.ts"
+    "build": "bun run ./scripts/build.ts",
+    "prepublishOnly": "bun run build"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.5",
