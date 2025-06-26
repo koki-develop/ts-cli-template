@@ -24,6 +24,9 @@
     "build": "bun run ./scripts/build.ts",
     "prepublishOnly": "bun run build"
   },
+  "dependencies": {
+    "commander": "14.0.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.0.5",
     "@types/bun": "1.2.17",
