@@ -2,7 +2,20 @@
   "name": "ts-cli-template",
   "module": "src/index.ts",
   "type": "module",
-  "private": true,
+  "version": "0.0.0",
+  "author": "koki-develop <kou.pg.0131@gmail.com>",
+  "homepage": "https://github.com/koki-develop/TODO",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koki-develop/TODO.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "TODO": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepare": "husky",
     "fmt": "biome check --write --unsafe .",
