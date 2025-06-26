@@ -2,7 +2,7 @@
   "name": "ts-cli-template",
   "module": "src/index.ts",
   "type": "module",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "koki-develop <kou.pg.0131@gmail.com>",
   "homepage": "https://github.com/koki-develop/TODO",
   "repository": {
