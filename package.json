@@ -3,6 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.0.5",
     "@types/bun": "1.2.17",
