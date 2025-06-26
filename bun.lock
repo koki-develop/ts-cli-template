@@ -4,10 +4,8 @@
     "": {
       "name": "ts-cli-template",
       "devDependencies": {
-        "@types/bun": "latest",
-      },
-      "peerDependencies": {
-        "typescript": "^5",
+        "@types/bun": "1.2.17",
+        "typescript": "5.8.3",
       },
     },
   },
