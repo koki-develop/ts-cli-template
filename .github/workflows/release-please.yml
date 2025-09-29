@@ -13,11 +13,12 @@ permissions: {}
 
 jobs:
   release-please:
+    name: Release Please
     timeout-minutes: 10
     permissions:
-      contents: write
-      pull-requests: write
-      issues: write
+      contents: write # Required to create releases and tags
+      pull-requests: write # Required to create and update release PRs
+      issues: write # Required to comment on issues
     runs-on: ubuntu-latest
     outputs:
       should-release: ${{ steps.release-please.outputs.release_created }}
@@ -32,11 +33,13 @@ jobs:
           token: ${{ github.token }}
 
   publish:
+    name: Publish
     needs: release-please
     timeout-minutes: 10
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      id-token: write # Required for npm provenance
     if: ${{ needs.release-please.outputs.should-release == 'true' }}
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -46,12 +49,5 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Create .npmrc
-        run: |
-          (
-            # shellcheck disable=SC2016
-            echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}'
-            echo 'registry=https://registry.npmjs.org'
-          ) > .npmrc
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: echo 'registry=https://registry.npmjs.org' > .npmrc
+      - run: npm publish # zizmor: ignore[use-trusted-publishing]
