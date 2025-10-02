@@ -32,6 +32,6 @@
     "@types/bun": "1.2.22",
     "husky": "9.1.7",
     "lint-staged": "16.2.1",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   }
 }
